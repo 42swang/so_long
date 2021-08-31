@@ -2,5 +2,5 @@
 .o
 .out
 .txt
-.gch
+.h.gch
 get_next_line
