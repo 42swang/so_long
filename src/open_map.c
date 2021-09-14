@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:23:17 by swang             #+#    #+#             */
-/*   Updated: 2021/09/14 16:35:06 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/14 17:59:22 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int	open_map(t_data *data, char *av)
 		map_obj(ret_gnl, map_line, line_count, data);
 		line_count++;
 	}
-	//map_wall(ret_gnl, map_line, line_count);
 	data->map.map_height = line_count - 1;
 	if (data->map.position < 1 || data->map.collect < 1 || data->map.exit < 1)
 		return (0);
