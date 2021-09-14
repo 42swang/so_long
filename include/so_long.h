@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:17:57 by swang             #+#    #+#             */
-/*   Updated: 2021/08/31 15:57:37 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/14 16:36:23 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,43 @@
 # define SO_LONG_H
 
 # include <stdio.h>
-# include "../get_next_line/get_next_line.h"
+# include <unistd.h>
 # include <fcntl.h>
+# include "../gnl/get_next_line.h"
+# include "../mlx/mlx.h"
 
-# define MAP_ERROR 100
+# define MAP_WALL_ERROR 103
+# define MAP_ERROR 104
+# define INFO_COUNT 105
 
 typedef struct s_map
 {
 	int	position;
 	int	collect;
 	int	exit;
+	int	map_width;
+	int	map_height;
 }	t_map;
 
+typedef struct s_data
+{
+	void	*mlx;
+	void	*win;
+	void	*img;
+	t_map	map;
+}	t_data;
+
 /* open map */
-void	open_map(int fd, t_map *info);
+int	open_map(t_data *data, char *str);
 
 /* check map */
 int	check_long_wall(char *str);
 int	check_short_wall(char *str);
-int	check_obj(char *str, t_map *info);
+int	check_obj(char *str, t_data *data);
 
 /* src */
+void	init_data(t_data *data);
 void	ft_error(int e);
-
+int	ft_strcmp(char *s1, char *s2);
 
 #endif
