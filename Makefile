@@ -6,7 +6,7 @@
 #    By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/02 17:18:13 by swang             #+#    #+#              #
-#    Updated: 2021/08/31 16:40:56 by swang            ###   ########.fr        #
+#    Updated: 2021/09/14 16:38:02 by swang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,28 +16,29 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-MAIN = main.c
-
 GNL = gnl/get_next_line.c\
 	gnl/get_next_line_utils.c
 
 SRC_DIR = src/
-SRC_NAME =	map/check_map.c\
-			map/open_map.c\
+SRC_NAME =	main.c\
+			check_map.c\
+			open_map.c\
 			ft_error.c\
 			so_long.c\
+			so_long_utils.c\
+			init.c\
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC_NAME))
 
-OBJS = $(SRCS:.c=.o) $(GNL:.c=.o) $(MAIN:.c=.o)
+OBJS = $(SRCS:.c=.o) $(GNL:.c=.o)
 
 .c.o :
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all : $(NAME)
 	
 $(NAME) : $(OBJS)
-		$(CC) $(CFLAGS) $^ -o $@
+		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean :
 		rm -rf $(OBJS)
@@ -45,7 +46,6 @@ clean :
 fclean :	clean
 			rm -rf $(NAME)
 
-re :	fclean
-		all
+re :	fclean all
 
 .PHONY : all clean fclean re
