@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:23:17 by swang             #+#    #+#             */
-/*   Updated: 2021/09/17 14:35:45 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/17 16:29:04 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	open_map(t_data *data, char *av)
 		free(str);
 		str = tmp;
 	}
-	ret = check_nl(str);
+	ret = check_nl_and_char(str);
 	if (ret == 0)
 	{
 		free(str);
