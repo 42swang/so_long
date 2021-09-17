@@ -14,9 +14,30 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	ptr = malloc(count * size);
+	if (!ptr)
+		return (NULL);
+	ft_memset(ptr, 0, count * size);
+	return (ptr);
+}
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)b;
+	while (len--)
+		*ptr++ = (unsigned char)c;
+	return (b);
+}
+
 void	ft_error(int i)
 {
-	if (i == NO_PRAM)
+	/*if (i == NO_PRAM)
 		write(1, "no pram\n", 8);
 	else if (i == FD_ERROR)
 		write(1, "fd error\n", 9);
@@ -28,6 +49,9 @@ void	ft_error(int i)
 		write(1, "failed to conect window\n", 24);
 	else if (i == NOT_SQUARE)
 		write(1, "Map is not square\n", 18);
+	*/
+	if (i < 0)
+		printf("1\n");
 	write(2, "Error\n", 6);
 	exit(0);
 }
