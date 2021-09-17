@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:23:17 by swang             #+#    #+#             */
-/*   Updated: 2021/09/17 16:29:04 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/18 01:35:48 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	check_element(t_data *data)
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
 	char	**arr;
 
 	y = 0;
@@ -35,7 +35,8 @@ int	check_element(t_data *data)
 		}
 		y++;
 	}
-	if (data->map.collect == 0 || data->map.exit == 0 || data->map.position != 1)
+	if (data->map.collect == 0 || data->map.exit == 0
+		|| data->map.position != 1)
 		return (0);
 	return (1);
 }

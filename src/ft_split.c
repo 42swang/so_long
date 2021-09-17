@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/18 01:09:31 by swang             #+#    #+#             */
+/*   Updated: 2021/09/18 01:09:36 by swang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/so_long.h"
 
 static char	**ft_free(char **res, int res_i)
@@ -54,7 +66,7 @@ static char	**ft_make_res(char const *s, char c, char **res, int c_word)
 			i++;
 		end = i - 1;
 		res[res_i] = ft_substr(s, (unsigned int)start,
-				 (size_t)(end - start + 1));
+				(int)(end - start + 1));
 		if (!res[res_i])
 			return (ft_free(res, res_i));
 		res_i++;

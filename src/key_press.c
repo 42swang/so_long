@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key_press.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/18 01:32:26 by swang             #+#    #+#             */
+/*   Updated: 2021/09/18 01:33:05 by swang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/so_long.h"
 
 void	press_w(t_data *data)
 {
 	char	c;
-	
+
 	c = data->map.map[data->py - 1][data->px];
 	if (c == 'C')
 		data->map.collect--;
@@ -24,7 +36,7 @@ void	press_w(t_data *data)
 void	press_a(t_data *data)
 {
 	char	c;
-	
+
 	c = data->map.map[data->py][data->px - 1];
 	if (c == 'C')
 		data->map.collect--;
@@ -45,9 +57,9 @@ void	press_a(t_data *data)
 void	press_s(t_data *data)
 {
 	char	c;
-	
+
 	c = data->map.map[data->py + 1][data->px];
-	if (c =='C')
+	if (c == 'C')
 		data->map.collect--;
 	else if (c == 'S')
 		ft_die(1);
@@ -66,7 +78,7 @@ void	press_s(t_data *data)
 void	press_d(t_data *data)
 {
 	char	c;
-	
+
 	c = data->map.map[data->py][data->px + 1];
 	if (c == 'C')
 		data->map.collect--;

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/18 01:05:15 by swang             #+#    #+#             */
+/*   Updated: 2021/09/18 02:02:41 by swang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/so_long.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s1[i] && s2[i])
@@ -14,59 +26,43 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	void	*ptr;
+	char	*join;
+	size_t	join_len;
+	size_t	i;
 
-	ptr = malloc(count * size);
-	if (!ptr)
+	i = 0;
+	if (!s1 && !s2)
 		return (NULL);
-	ft_memset(ptr, 0, count * size);
-	return (ptr);
+	if (s1 && !s2)
+		return (ft_strdup(s1));
+	if (!s1 && s2)
+		return (ft_strdup(s2));
+	join_len = ft_strlen(s1) + ft_strlen(s2);
+	join = (char *)malloc(sizeof(char) * (join_len + 1));
+	if (!join)
+		return (NULL);
+	while (*s1)
+		join[i++] = *s1++;
+	while (*s2)
+		join[i++] = *s2++;
+	join[i] = '\0';
+	return (join);
 }
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strdup(const char *s1)
 {
-	unsigned char	*ptr;
+	size_t	len;
+	char	*str;
+	char	*new;
 
-	ptr = (unsigned char *)b;
+	len = ft_strlen(s1);
+	str = (char *)s1;
+	new = ft_calloc(len + 1, sizeof(char));
+	if (!new)
+		return (NULL);
 	while (len--)
-		*ptr++ = (unsigned char)c;
-	return (b);
-}
-
-void	ft_error(int i)
-{
-	/*if (i == NO_PRAM)
-		write(1, "no pram\n", 8);
-	else if (i == FD_ERROR)
-		write(1, "fd error\n", 9);
-	else if (i == MAP_ERROR)
-		write(1, "MAP don't fill\n", 15);
-	else if (i == IMG_ERROR)
-		write(1, "failed to road image\n", 21);
-	else if (i == MLX_FAIL)
-		write(1, "failed to conect window\n", 24);
-	else if (i == NOT_SQUARE)
-		write(1, "Map is not square\n", 18);
-	*/
-	if (i < 0)
-		printf("1\n");
-	write(2, "Error\n", 7);
-	exit(0);
-}
-
-void	ft_goal(int i)
-{
-	write(1, "movement:", 10);
-	write(1, &i, 1);
-	write(1, "\n", 2);
-	exit(0);
-}
-
-void	ft_die(int i)
-{
-	write(1, "you died\n", 10);
-	write(1, &i, 1);
-	exit(0);
+		new[len] = str[len];
+	return (new);
 }

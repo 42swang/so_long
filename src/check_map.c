@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 14:36:57 by swang             #+#    #+#             */
-/*   Updated: 2021/09/17 15:54:16 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/18 01:16:25 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	check_nl_and_char(char *str)
 
 int	check_square(t_data *data)
 {
-	int	i;
-	char **arr;
+	int		i;
+	char	**arr;
 
 	i = 0;
 	arr = data->map.map;
@@ -42,7 +42,7 @@ int	check_square(t_data *data)
 			return (0);
 		i++;
 	}
-	data->map.map_width = ft_strlen(arr[0]);
+	data->map.map_width = (int)ft_strlen(arr[0]);
 	data->map.map_height = i + 1;
 	return (1);
 }
@@ -65,7 +65,7 @@ int	check_wall(t_data *data)
 		else
 			ret = check_short_wall(arr[i]);
 		if (ret == 0)
-				return (ret);
+			return (ret);
 		i++;
 	}
 	return (1);
