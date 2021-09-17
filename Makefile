@@ -6,7 +6,7 @@
 #    By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/02 17:18:13 by swang             #+#    #+#              #
-#    Updated: 2021/09/17 11:20:05 by swang            ###   ########.fr        #
+#    Updated: 2021/09/17 15:11:42 by swang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,15 @@ GNL = gnl/get_next_line.c\
 
 SRC_DIR = src/
 SRC_NAME =	main.c\
-			ft_check_map.c\
-			so_long_utils.c\
-			open_map.c\
 			init.c\
-			put_image.c\
-			window.c
+			map.c\
+			check_map.c\
+			window.c\
+			image.c\
+			move.c\
+			key_press.c\
+			so_long_utils.c\
+			ft_split.c
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC_NAME))
 
