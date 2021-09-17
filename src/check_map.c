@@ -6,19 +6,22 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 14:36:57 by swang             #+#    #+#             */
-/*   Updated: 2021/09/17 14:36:08 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/17 15:54:16 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int	check_nl(char *str)
+int	check_nl_and_char(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
+		if (str[i] != '1' && str[i] != 'C' && str[i] != 'P'
+			&& str[i] != 'E' && str[i] != '0' && str[i] != '\n')
+			return (0);
 		if (i != 0 && str[i] == '\n' && str[i - 1] == '\n')
 			return (0);
 		i++;
