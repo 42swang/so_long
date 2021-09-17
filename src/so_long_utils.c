@@ -52,6 +52,21 @@ void	ft_error(int i)
 	*/
 	if (i < 0)
 		printf("1\n");
-	write(2, "Error\n", 6);
+	write(2, "Error\n", 7);
+	exit(0);
+}
+
+void	ft_goal(int i)
+{
+	write(1, "movement:", 10);
+	write(1, &i, 1);
+	write(1, "\n", 2);
+	exit(0);
+}
+
+void	ft_die(int i)
+{
+	write(1, "you died\n", 10);
+	write(1, &i, 1);
 	exit(0);
 }
