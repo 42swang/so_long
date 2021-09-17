@@ -6,7 +6,7 @@
 #    By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/02 17:18:13 by swang             #+#    #+#              #
-#    Updated: 2021/09/14 16:38:02 by swang            ###   ########.fr        #
+#    Updated: 2021/09/17 11:20:05 by swang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,12 @@ GNL = gnl/get_next_line.c\
 
 SRC_DIR = src/
 SRC_NAME =	main.c\
-			check_map.c\
-			open_map.c\
-			ft_error.c\
-			so_long.c\
+			ft_check_map.c\
 			so_long_utils.c\
+			open_map.c\
 			init.c\
+			put_image.c\
+			window.c
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC_NAME))
 
@@ -38,7 +38,7 @@ OBJS = $(SRCS:.c=.o) $(GNL:.c=.o)
 all : $(NAME)
 	
 $(NAME) : $(OBJS)
-		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+		$(CC) $(CFLAGS) -L./mlx -lmlx -framework OpenGL -framework Appkit $(OBJS) -o $(NAME)
 
 clean :
 		rm -rf $(OBJS)
