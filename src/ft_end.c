@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:05:53 by swang             #+#    #+#             */
-/*   Updated: 2021/09/18 01:17:18 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/19 21:00:47 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,14 @@ void	ft_error(int i)
 	exit(0);
 }
 
-void	ft_goal(int i)
+void	ft_goal(int move)
 {
-	write(1, "movement:", 10);
-	write(1, &i, 1);
-	write(1, "\n", 2);
-	exit(0);
-}
+	char	*ptr;
 
-void	ft_die(int i)
-{
-	write(1, "you died\n", 10);
-	write(1, &i, 1);
+	ptr = ft_itoa(move);
+	write(1, "movement :", 10);
+	write(1, ptr, ft_strlen(ptr));
+	write(1, "\n", 1);
+	write(1, "Good\n", 5);
 	exit(0);
 }

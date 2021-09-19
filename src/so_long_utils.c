@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:05:15 by swang             #+#    #+#             */
-/*   Updated: 2021/09/18 02:02:41 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/19 21:00:01 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,14 @@ char	*ft_strdup(const char *s1)
 	while (len--)
 		new[len] = str[len];
 	return (new);
+}
+
+void	ft_shell_out(int move)
+{
+	char	*ptr;
+
+	ptr = ft_itoa(move);
+	write(1, "movement :", 10);
+	write(1, ptr, ft_strlen(ptr));
+	write(1, "\n", 1);
 }
