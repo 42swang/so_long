@@ -6,44 +6,11 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:24:15 by swang             #+#    #+#             */
-/*   Updated: 2021/09/18 02:18:09 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/19 16:29:28 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-
-static void	put_spikes(t_data *data, int x, int y, int c)
-{
-	mlx_put_image_to_window(data->mlx, data->win,
-		data->image.spikes, x * 32, y * 32);
-	if (c != 0)
-		data->map.map[y][x] = 'S';
-	if (c == 'a')
-		data->spk.a = 0;
-	else if (c == 'b')
-		data->spk.b = 0;
-	else if (c == 'c')
-		data->spk.c = 0;
-	else if (c == 'd')
-		data->spk.d = 0;
-}
-
-static void	spikes(t_data *data, int x, int y)
-{
-	int	w_half;
-	int	h_half;
-
-	w_half = data->map.map_width / 2;
-	h_half = data->map.map_height / 2;
-	if (w_half > x && h_half > y && data->spk.a == 1)
-		put_spikes(data, x, y, 'a');
-	else if (w_half < x && h_half > y && data->spk.b == 1)
-		put_spikes(data, x, y, 'b');
-	else if (w_half > x && h_half < y && data->spk.c == 1)
-		put_spikes(data, x, y, 'c');
-	else if (w_half < x && h_half < y && data->spk.d == 1)
-		put_spikes(data, x, y, 'd');
-}
 
 static void	put_door(t_data *data, int x, int y, int item)
 {
@@ -87,15 +54,10 @@ void	put_element(t_data *data)
 			if (arr[y][x] == 'P' || arr[y][x] == 'p'
 				|| arr[y][x] == 'C' || arr[y][x] == '1')
 				put_element2(data, x, y, arr[y][x]);
-			if (arr[y][x] == '0' && data->spk.s == 1)
-				spikes(data, x, y);
-			else if (arr[y][x] == 'S')
-				put_spikes(data, x, y, 0);
 			else if (arr[y][x] == 'E')
 				put_door(data, x, y, data->map.collect);
 			x++;
 		}
 		y++;
 	}
-	data->spk.s = 0;
 }

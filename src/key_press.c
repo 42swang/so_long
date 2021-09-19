@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:32:26 by swang             #+#    #+#             */
-/*   Updated: 2021/09/18 01:33:05 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/19 16:31:48 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	press_w(t_data *data)
 	c = data->map.map[data->py - 1][data->px];
 	if (c == 'C')
 		data->map.collect--;
-	else if (c == 'S')
-		ft_die(1);
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
@@ -40,8 +38,6 @@ void	press_a(t_data *data)
 	c = data->map.map[data->py][data->px - 1];
 	if (c == 'C')
 		data->map.collect--;
-	else if (c == 'S')
-		ft_die(1);
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
@@ -61,8 +57,6 @@ void	press_s(t_data *data)
 	c = data->map.map[data->py + 1][data->px];
 	if (c == 'C')
 		data->map.collect--;
-	else if (c == 'S')
-		ft_die(1);
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
@@ -82,8 +76,6 @@ void	press_d(t_data *data)
 	c = data->map.map[data->py][data->px + 1];
 	if (c == 'C')
 		data->map.collect--;
-	else if (c == 'S')
-		ft_die(1);
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
