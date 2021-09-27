@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:10:26 by swang             #+#    #+#             */
-/*   Updated: 2021/09/28 06:04:33 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 07:26:00 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	ft_close(t_data *data)
 void	window(t_data *data)
 {
 	data->win = mlx_new_window(data->mlx,
-			data->map.map_width * 32, data->map.map_height * 32, "so_long_bonus");
+			data->map.map_width * 32,
+			data->map.map_height * 32, "so_long_bonus");
 	put_image(data);
 	mlx_hook(data->win, KEYPRESS, 0, &move, data);
 	mlx_loop_hook(data->mlx, &put_image, data);
