@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:05:53 by swang             #+#    #+#             */
-/*   Updated: 2021/09/28 03:51:36 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 06:01:50 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	ft_die(int move, t_data *data)
 	char	*ptr;
 
 	ptr = ft_itoa(move);
-	write(1, "movement :", 10);
+	write(1, "movement:", 10);
 	write(1, ptr, ft_strlen(ptr));
 	write(1, "\n", 1);
 	write(1, "You Died\n", 9);
