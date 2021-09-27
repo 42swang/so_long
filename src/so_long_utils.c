@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:05:15 by swang             #+#    #+#             */
-/*   Updated: 2021/09/28 06:00:40 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 06:03:08 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_shell_out(int move)
 	char	*ptr;
 
 	ptr = ft_itoa(move);
-	write(1, "movement:", 10);
+	write(1, "movement:", 9);
 	write(1, ptr, ft_strlen(ptr));
 	write(1, "\n", 1);
 	free(ptr);

@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:05:53 by swang             #+#    #+#             */
-/*   Updated: 2021/09/28 02:32:51 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 06:03:41 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ void	ft_error(int i, t_data *data)
 	if (i == CHECK_PRAM)
 		write(1, "check prameter\n", 15);
 	else if (i == FD_ERROR)
-		write(1, "map file fd error\n", 9);
+		write(1, "map file fd error\n", 18);
 	else if (i == MAP_ERROR)
 		write(1, "check map condition\n", 20);
 	else if (i == MLX_FAIL)
 		write(1, "failed to conect window\n", 24);
 	else if (i == IMG_ERROR)
 		write(1, "failed to road image\n", 21);
-	write(2, "Error\n", 7);
+	write(2, "Error\n", 6);
 	ft_destroy(data);
 }
 
