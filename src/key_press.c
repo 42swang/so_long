@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:32:26 by swang             #+#    #+#             */
-/*   Updated: 2021/09/19 21:17:12 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/27 22:13:25 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	press_w(t_data *data)
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
-			ft_goal(++data->move);
+			ft_goal(++data->move, data);
 		return ;
 	}
 	data->map.map[data->py - 1][data->px] = 'P';
@@ -42,7 +42,7 @@ void	press_a(t_data *data)
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
-			ft_goal(++data->move);
+			ft_goal(++data->move, data);
 		return ;
 	}
 	data->map.map[data->py][data->px - 1] = 'p';
@@ -62,7 +62,7 @@ void	press_s(t_data *data)
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
-			ft_goal(++data->move);
+			ft_goal(++data->move, data);
 		return ;
 	}	
 	data->map.map[data->py + 1][data->px] = 'P';
@@ -82,7 +82,7 @@ void	press_d(t_data *data)
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
-			ft_goal(++data->move);
+			ft_goal(++data->move, data);
 		return ;
 	}
 	data->map.map[data->py][data->px + 1] = 'P';

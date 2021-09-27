@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:23:17 by swang             #+#    #+#             */
-/*   Updated: 2021/09/18 01:35:48 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/27 21:27:31 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ void	check_map(t_data *data)
 	ret = 1;
 	ret = check_square(data);
 	if (ret == 0)
-		ft_error(NOT_SQUARE);
+		ft_error(MAP_ERROR, 0);
 	ret = check_wall(data);
 	if (ret == 0)
-		ft_error(WALL_GUARD);
+		ft_error(MAP_ERROR, 0);
 	ret = check_element(data);
 	if (ret == 0)
-		ft_error(ELEMENT_ERROR);
+		ft_error(MAP_ERROR, 0);
 }
 
 void	open_map(t_data *data, char *av)
@@ -66,7 +66,7 @@ void	open_map(t_data *data, char *av)
 
 	data->fd = open(av, O_RDONLY);
 	if (data->fd < 0)
-		ft_error(FD_ERROR);
+		ft_error(FD_ERROR, 0);
 	str = ft_strdup("");
 	while (read(data->fd, buf, 1) > 0)
 	{
@@ -80,7 +80,7 @@ void	open_map(t_data *data, char *av)
 	{
 		free(str);
 		close(data->fd);
-		ft_error(WALL_GUARD);
+		ft_error(MAP_ERROR, 0);
 	}
 	data->map.map = ft_split(str, '\n');
 	free(str);

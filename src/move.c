@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:10:16 by swang             #+#    #+#             */
-/*   Updated: 2021/09/18 01:36:05 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 02:58:15 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,10 @@ int	move(int keycode, t_data *data)
 		press_s(data);
 	else if (keycode == 2 && data->map.map[y][x + 1] != '1')
 		press_d(data);
+	else if (keycode == 53)
+	{
+		write(1, "Press escape key\n", 17);
+		ft_destroy(data);
+	}
 	return (1);
 }

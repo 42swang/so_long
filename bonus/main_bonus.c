@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:18:02 by swang             #+#    #+#             */
-/*   Updated: 2021/09/19 20:34:32 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 03:12:05 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ int	main(int argc, char **argv)
 		window(&data);
 	}
 	else
-		ft_error(NO_PRAM);
+		ft_error(CHECK_PRAM, 0);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:05:15 by swang             #+#    #+#             */
-/*   Updated: 2021/09/19 21:00:01 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 02:43:06 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,6 @@ void	ft_shell_out(int move)
 	write(1, "movement :", 10);
 	write(1, ptr, ft_strlen(ptr));
 	write(1, "\n", 1);
+	free(ptr);
+	ptr = 0;
 }

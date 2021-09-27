@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:32:26 by swang             #+#    #+#             */
-/*   Updated: 2021/09/19 21:19:24 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 02:56:01 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	press_w(t_data *data)
 	if (c == 'C')
 		data->map.collect--;
 	else if (c == 'S')
-		ft_die(++data->move);
+		ft_die(++data->move, data);
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
-			ft_goal(++data->move);
+			ft_goal(++data->move, data);
 		return ;
 	}
 	data->map.map[data->py - 1][data->px] = 'P';
@@ -42,11 +42,11 @@ void	press_a(t_data *data)
 	if (c == 'C')
 		data->map.collect--;
 	else if (c == 'S')
-		ft_die(++data->move);
+		ft_die(++data->move, data);
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
-			ft_goal(++data->move);
+			ft_goal(++data->move, data);
 		return ;
 	}
 	data->map.map[data->py][data->px - 1] = 'p';
@@ -64,11 +64,11 @@ void	press_s(t_data *data)
 	if (c == 'C')
 		data->map.collect--;
 	else if (c == 'S')
-		ft_die(++data->move);
+		ft_die(++data->move, data);
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
-			ft_goal(++data->move);
+			ft_goal(++data->move, data);
 		return ;
 	}	
 	data->map.map[data->py + 1][data->px] = 'P';
@@ -86,11 +86,11 @@ void	press_d(t_data *data)
 	if (c == 'C')
 		data->map.collect--;
 	else if (c == 'S')
-		ft_die(++data->move);
+		ft_die(++data->move, data);
 	else if (c == 'E')
 	{
 		if (data->map.collect == 0)
-			ft_goal(++data->move);
+			ft_goal(++data->move, data);
 		return ;
 	}
 	data->map.map[data->py][data->px + 1] = 'P';

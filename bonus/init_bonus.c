@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:09:49 by swang             #+#    #+#             */
-/*   Updated: 2021/09/19 21:10:03 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 02:54:38 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	init_data(t_data *data)
 {
 	data->mlx = mlx_init();
 	if (data->mlx == 0)
-		ft_error(MLX_FAIL);
+		ft_error(MLX_FAIL, 0);
 	data->win = 0;
 	data->img = 0;
 	data->fd = 0;
@@ -83,5 +83,5 @@ void	get_image(t_data *data)
 		|| data->image.door == 0 || data->image.stair == 0
 		|| data->image.player == 0 || data->image.wall == 0
 		|| data->image.spikes == 0)
-		ft_error(IMG_ERROR);
+		ft_error(IMG_ERROR, data);
 }
