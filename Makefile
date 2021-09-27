@@ -6,7 +6,7 @@
 #    By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/02 17:18:13 by swang             #+#    #+#              #
-#    Updated: 2021/09/19 21:37:39 by swang            ###   ########.fr        #
+#    Updated: 2021/09/28 04:05:16 by swang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,10 +68,11 @@ bonus : $(B_OBJS)
 		make -C ./mlx
 		$(CC) $(CFLAGS) -L./mlx -lmlx -framework OpenGL -framework Appkit $(B_OBJS) -o $(B_NAME)
 clean :
-		rm $(OBJS) $(B_OBJS)
+		make -C ./mlx clean
+		rm -rf $(OBJS) $(B_OBJS)
 
 fclean :	clean
-			rm $(NAME) $(B_NAME)
+			rm -rf $(NAME) $(B_NAME)
 
 re :	fclean all
 
