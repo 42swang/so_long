@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:09:40 by swang             #+#    #+#             */
-/*   Updated: 2021/09/19 21:31:44 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 07:14:55 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	put_image(t_data *data)
 	ptr = ft_itoa(data->move);
 	put_floor(data);
 	put_element(data);
-	mlx_string_put(data->mlx, data->win, 10, 15, 0, ptr);
+	mlx_string_put(data->mlx, data->win, 10, 15, 16777215, "movement:");
+	mlx_string_put(data->mlx, data->win, 75, 15, 16777215, ptr);
 	free(ptr);
 	ptr = 0;
 	return (1);
