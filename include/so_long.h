@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:17:57 by swang             #+#    #+#             */
-/*   Updated: 2021/09/19 20:14:47 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/27 22:13:57 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,14 @@
 # include <fcntl.h>
 # include "../mlx/mlx.h"
 
-# define NO_PRAM 101
+# define CHECK_PRAM 101
 # define FD_ERROR 102
 # define IMG_ERROR 103
 # define MLX_FAIL 105
+# define MAP_ERROR 106
 
-# define NOT_SQUARE 106
-# define WALL_GUARD 107
-# define ELEMENT_ERROR 108
 # define KEYPRESS 2
+# define REDCROSS 17
 
 typedef struct s_imgs
 {
@@ -111,7 +110,9 @@ char	*ft_strdup(const char *s1);
 void	ft_shell_out(int move);
 
 /* ft_end*/
-void	ft_error(int i);
-void	ft_goal(int move);
+int		ft_close(t_data *data);
+void	ft_destroy(t_data *data);
+void	ft_error(int i, t_data *data);
+void	ft_goal(int move, t_data *data);
 
 #endif
