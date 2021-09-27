@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:05:53 by swang             #+#    #+#             */
-/*   Updated: 2021/09/28 06:03:41 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 06:21:43 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,17 @@ int	ft_close(t_data *data)
 void	ft_error(int i, t_data *data)
 {
 	if (i == CHECK_PRAM)
+	{
 		write(1, "check prameter\n", 15);
+		write(2, "Error\n", 6);
+		exit(0);
+	}
 	else if (i == FD_ERROR)
+	{
 		write(1, "map file fd error\n", 18);
+		write(2, "Error\n", 6);
+		exit(0);
+	}
 	else if (i == MAP_ERROR)
 		write(1, "check map condition\n", 20);
 	else if (i == MLX_FAIL)
