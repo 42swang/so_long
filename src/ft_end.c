@@ -6,25 +6,25 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:05:53 by swang             #+#    #+#             */
-/*   Updated: 2021/09/28 06:21:43 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 16:35:04 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-static int	ft_free(char **str)
+static void	ft_free(char **str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != 0)
 	{
 		free(str[i]);
 		str[i] = 0;
 		i++;
 	}
 	free(str);
-	return (0);
+	str = 0;
 }
 
 void	ft_destroy(t_data *data)
@@ -60,25 +60,19 @@ int	ft_close(t_data *data)
 void	ft_error(int i, t_data *data)
 {
 	if (i == CHECK_PRAM)
-	{
 		write(1, "check prameter\n", 15);
-		write(2, "Error\n", 6);
-		exit(0);
-	}
 	else if (i == FD_ERROR)
-	{
-		write(1, "map file fd error\n", 18);
-		write(2, "Error\n", 6);
-		exit(0);
-	}
-	else if (i == MAP_ERROR)
-		write(1, "check map condition\n", 20);
+		write(1, "check map file\n", 15);
 	else if (i == MLX_FAIL)
 		write(1, "failed to conect window\n", 24);
+	else if (i == MAP_ERROR)
+		write(1, "check map condition\n", 20);
 	else if (i == IMG_ERROR)
 		write(1, "failed to road image\n", 21);
 	write(2, "Error\n", 6);
-	ft_destroy(data);
+	if (i == MAP_ERROR || i == IMG_ERROR)
+		ft_destroy(data);
+	exit(0);
 }
 
 void	ft_goal(int move, t_data *data)

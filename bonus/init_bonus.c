@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:09:49 by swang             #+#    #+#             */
-/*   Updated: 2021/09/28 02:54:38 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 08:15:28 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	init_map(t_data *data)
 	data->map.position = 0;
 	data->map.collect = 0;
 	data->map.exit = 0;
+	data->map.map = 0;
 	data->map.map_width = 0;
 	data->map.map_height = 0;
 }

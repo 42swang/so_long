@@ -6,7 +6,7 @@
 /*   By: swang <swang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 01:09:49 by swang             #+#    #+#             */
-/*   Updated: 2021/09/27 22:04:39 by swang            ###   ########.fr       */
+/*   Updated: 2021/09/28 16:35:32 by swang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,20 @@ void	init_data(t_data *data)
 	data->fd = 0;
 	data->px = 0;
 	data->py = 0;
+	data->move = 0;
 	init_image(data);
 	init_map(data);
 }
 
 void	init_image(t_data *data)
 {
-	data->image.item = 0;
-	data->image.player = 0;
-	data->image.left_player = 0;
 	data->image.door = 0;
+	data->image.floor = 0;
+	data->image.item = 0;
+	data->image.left_player = 0;
+	data->image.player = 0;
 	data->image.stair = 0;
 	data->image.wall = 0;
-	data->image.floor = 0;
 }
 
 void	init_map(t_data *data)
@@ -42,6 +43,7 @@ void	init_map(t_data *data)
 	data->map.position = 0;
 	data->map.collect = 0;
 	data->map.exit = 0;
+	data->map.map = 0;
 	data->map.map_width = 0;
 	data->map.map_height = 0;
 }
