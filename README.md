@@ -16,7 +16,7 @@ mlx 라이브러리 공부하기
 - tealee42 : mlx_example [https://github.com/taelee42/mlx_example.git](https://github.com/taelee42/mlx_example.git)
 
 ### flowchart
-파일참조
+![flowchart](https://github.com/42swang/so_long/blob/master/so_long.png?raw=true)
 
 ### 예외처리
 
