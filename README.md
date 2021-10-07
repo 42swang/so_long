@@ -24,7 +24,7 @@ mlx 라이브러리 공부하기
     
     1, 0, P, C, E 다섯개 문자로만 구성되어 있는가?
     
-    플레이어 스타팅포인터, 탈출구, 수집아이템이 각 한개씩 존재 하는가?
+    플레이어 스타팅포인터, 탈출구, 수집아이템이 적어도 한개씩 존재 하는가?
     
     - 나는 플레이어 스타팅 포지션은 1개만 존재해야 하도록 처리하고, 탈출구는 여러개여도 게임성에 지장을 주지않는다고 판단하여  탈출구가 여러개여도 에러처리 하지 않았음.
     
@@ -78,7 +78,7 @@ mlx_loop_hook(void *mlx_ptr, int(funct_ptr)(), void *param);
 ```c
 mlx_string_put(void *mlx_ptr, void *win_ptr, int x, int y, int color, char *string);
 - (x,y)좌표에 string을 출력한다.
-- int자료형 인자는 4바이트(32비트)로 8비트씩 각각 투명도, R,G,B를 담당한다.
+- int자료형 인자는 4바이트(32비트)로 8비트씩 각각 투명도, R, G, B를 담당한다.
 ```
 
 - mlx_string_put() 함수에서 int자료형 컬러의 이해 : [https://42kchoi.tistory.com/229](https://42kchoi.tistory.com/229)
